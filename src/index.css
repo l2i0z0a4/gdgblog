@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Appliquer une police propre et un meilleur rendu */
+:root {
+  @apply text-gray-900 bg-white dark:bg-gray-900 dark:text-white;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Supprime les marges par défaut du body */
+body {
+  @apply m-0 flex items-center justify-center min-h-screen;
+}
+
+/* Styles pour les liens */
+a {
+  @apply font-medium text-blue-600 hover:text-blue-500 transition;
+}
+
+/* Styles pour les boutons */
+button {
+  @apply px-4 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700 transition;
+}
+
+/* Responsive pour le dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    @apply text-white bg-gray-900;
+  }
+}
