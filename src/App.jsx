@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Alumni from "./pages/Alumni";
 import Blogs from "./pages/Blogs";
 // import Contact from "./pages/Contact";
-// import Profile from "./pages/Profile";
+import Profile from "./pages/Profilealumni";
 // import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 // import NotFound from "./pages/NotFound";
@@ -26,11 +26,11 @@ function App() {
 
           { <Route path="/blogs" element={<Blogs />} />}
 
-          {/* 
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/favorites" element={<Favorites />} />
+          { 
+          <Route path="/profilealumni" element={<Profile />} />}
+          {/* <Route path="/favorites" element={<Favorites />} />
           
-          <Route path="*" element={<NotFound />} />    */}
+          <Route path="*" element={<NotFound />} />     */}
         </Routes>
       </main>
       <Footer />

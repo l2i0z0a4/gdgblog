@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-
+import femme from '../assets/femme.png';
+import homme from '../assets/homme.png';
 const Home = () => {
     const [memberList, setMemberList] = useState([]);
     const [blogList, setBlogList] = useState([]);
@@ -8,15 +9,15 @@ const Home = () => {
 
     useEffect(() => {
         const memberList = [
-            { id: 1, name: "John Doe", email: "john@example.com", role: "alumni", specialty: "software engineer", image: "https://via.placeholder.com/150", lienlinkedin: "http://example.com" },
-            { id: 2, name: "Jane Doe", email: "jane@example.com", role: "alumni", specialty: "software engineer", image: "https://via.placeholder.com/150", lienlinkedin: "http://example.com" },
-            { id: 3, name: "Michael Doe", email: "michael@example.com", role: "alumni", specialty: "software engineer", image: "https://via.placeholder.com/150", lienlinkedin: "http://example.com" },
+            { id: 1, name: "John Doe", email: "john@example.com", role: "alumni", specialty: "software engineer", image: femme, lienlinkedin: "http://example.com" },
+            { id: 2, name: "Jane Doe", email: "jane@example.com", role: "alumni", specialty: "software engineer", image:homme, lienlinkedin: "http://example.com" },
+            { id: 3, name: "Michael Doe", email: "michael@example.com", role: "alumni", specialty: "software engineer", image: homme , lienlinkedin: "http://example.com" },
         ];
 
         const blogList = [
-            { id: 1, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egettttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt", creator: "John Doe", creatorImage: "https://via.placeholder.com/40", date: "2022-10-10" },
-            { id: 2, title: "The impact of technology on our lives", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Jane Doe", creatorImage: "https://via.placeholder.com/40", date: "2022-10-15" },
-            { id: 3, title: "The future of software engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Michael Doe", creatorImage: "https://via.placeholder.com/40", date: "2022-10-20" },
+            { id: 1, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egettttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt", creator: "John Doe", creatorImage: femme, date: "2022-10-10" },
+            { id: 2, title: "The impact of technology on our lives", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Jane Doe", creatorImage: femme, date: "2022-10-15" },
+            { id: 3, title: "The future of software engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Michael Doe", creatorImage: femme, date: "2022-10-20" },
         ];
 
         setMemberList(memberList);
@@ -51,7 +52,7 @@ const Home = () => {
             {/* Section Blogs */}
             <section id="blogs" className="w-full h-screen bg-white flex flex-col justify-center">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-[#4285F4] text-center mb-8">Latest Blogs</h2>
+                    <h2 className="text-3xl font-bold text-green-600 text-center mb-8">Latest Blogs</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {blogList.map((blog) => (
                             <div key={blog.id} className="bg-gray-100 p-6 rounded-lg shadow-lg h-80 flex flex-col justify-between">
@@ -104,7 +105,7 @@ const Home = () => {
             {/* Section Alumni */}
             <section id="alumni" className="w-full h-screen bg-gray-100 flex flex-col justify-center">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-[#4285F4] text-center mb-8">Our Alumnies</h2>
+                    <h2 className="text-3xl font-bold text-green-600 text-center mb-8">Our Alumnies</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {memberList.map((member) => (
                             <div key={member.id} className="bg-white p-6 rounded-lg shadow-lg h-80 flex flex-col items-center justify-center">

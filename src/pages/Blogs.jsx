@@ -3,19 +3,19 @@ import Navbar1 from "../components/Navbar1";
 import femme from "../assets/femme.png";
 import homme from "../assets/homme.png";
 
-const BlogsPage = () => {
+const Blogs = () => {
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   // Liste étendue des blogs
   const blogList = [
-    { id: 1, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "John Doe", creatorImage:homme, date: "2022-10-10" },
+    { id: 1, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "John Doe", creatorImage: homme, date: "2022-10-10" },
     { id: 2, title: "The impact of technology on our lives", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Jane Doe", creatorImage: femme, date: "2022-10-15" },
-    { id: 3, title: "The future of software engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt.", creator: "Michael Doe", creatorImage: homme, date: "2022-10-20" },
+    { id: 3, title: "The future of software engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Michael Doe", creatorImage: homme, date: "2022-10-20" },
     { id: 4, title: "The importance of data science", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Alice Smith", creatorImage: femme, date: "2022-10-25" },
-    { id: 5, title: "Web development trends in 2023", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Bob Johnson", creatorImage: homme, date: "2022-11-01" },
-    { id: 6, title: "Mobile development: Tips and tricks", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Charlie Brown", creatorImage: femme, date: "2022-11-05" },
-    { id: 7, title: "Cloud computing in modern tech", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Sarah Connor", creatorImage: femme, date: "2022-11-10" },
-    { id: 8, title: "The rise of AI and automation", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Elon Stark", creatorImage: homme, date: "2022-11-15" },
+    { id: 5, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "John Doe", creatorImage: homme, date: "2022-10-10" },
+    { id: 6, title: "The impact of technology on our lives", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Jane Doe", creatorImage: femme, date: "2022-10-15" },
+    { id: 7, title: "The future of software engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunt.", creator: "Michael Doe", creatorImage: homme, date: "2022-10-20" },
+    { id: 8, title: "The importance of data science", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lorem nec nisi tincidunt tincidunttttttttttttttttttttttttttttttttttttttttttttttt.", creator: "Alice Smith", creatorImage: femme, date: "2022-10-25" },
   ];
 
   return (
@@ -42,7 +42,7 @@ const BlogsPage = () => {
                   {blog.content.length > 100 ? (
                     <>
                       {blog.content.substring(0, 100)}...
-                      <span 
+                      <span
                         className="text-blue-500 text-sm ml-2 hover:underline cursor-pointer"
                         onClick={() => setSelectedBlog(blog)}
                       >
@@ -71,8 +71,30 @@ const BlogsPage = () => {
           </div>
         </div>
       )}
+
+      {/* Section Ask Chatbot */}
+      <section id ="chatbot" className="bg-white py-10 mt-10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-6">Need More Help?</h2>
+          <p className="text-gray-700 text-center mb-6">
+            Didn't understand something in the blogs? Ask our chatbot below for assistance.
+          </p>
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
+              <textarea
+                className="w-full p-4 border border-gray-300 rounded-lg resize-none"
+                rows="3"
+                placeholder="Type your question here..."
+              ></textarea>
+              <button className="bg-green-500 hover:bg-green-600 text-white w-full py-2 mt-3 rounded-lg">
+                Ask Chatbot
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default BlogsPage;
+export default Blogs;
