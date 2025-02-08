@@ -1,43 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import Navbar1 from '../components/Navbar1';
 import femme from '../assets/femme.png';
 import homme from '../assets/homme.png';
-const Home = () => {
+const Homemember = () => {
     const [memberList, setMemberList] = useState([]);
     const [blogList, setBlogList] = useState([]);
     const [selectedBlog, setSelectedBlog] = useState(null);
 
     useEffect(() => {
+        // Données factices pour la liste des membres et des blogs
         const memberList = [
             { id: 1, name: "John Doe", email: "john@example.com", role: "alumni", specialty: "software engineer", image: femme, lienlinkedin: "http://example.com" },
-            { id: 2, name: "Jane Doe", email: "jane@example.com", role: "alumni", specialty: "software engineer", image:homme, lienlinkedin: "http://example.com" },
-            { id: 3, name: "Michael Doe", email: "michael@example.com", role: "alumni", specialty: "software engineer", image: homme , lienlinkedin: "http://example.com" },
+            { id: 2, name: "Jane Doe", email: "jane@example.com", role: "alumni", specialty: "software engineer", image: homme, lienlinkedin: "http://example.com" },
+            { id: 3, name: "Michael Doe", email: "michael@example.com", role: "alumni", specialty: "software engineer", image: homme, lienlinkedin: "http://example.com" },
         ];
-
         const blogList = [
-            { id: 1, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egettttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt", creator: "John Doe", creatorImage: femme, date: "2022-10-10" },
-            { id: 2, title: "The impact of technology on our lives", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Jane Doe", creatorImage: femme, date: "2022-10-15" },
+            { id: 1, title: "How to become a software engineer", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egettttttttttttttttttttttttttttttttttttttttttttttttttttttttt", creator: "John Doe", creatorImage:homme, date: "2022-10-10" },
+            { id: 2, title: "The impact of technology on our lives", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Jane Doe", creatorImage: homme, date: "2022-10-15" },
             { id: 3, title: "The future of software engineering", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget", creator: "Michael Doe", creatorImage: femme, date: "2022-10-20" },
         ];
 
-        setMemberList(memberList);
-        setBlogList(blogList);
+        setMemberList(memberList); // Mettre à jour la liste des membres
+        setBlogList(blogList); // Mettre à jour la liste des blogs
     }, []);
 
     return (
         <div>
-            <Navbar />
+            <Navbar1 />
 
-            {/* Section with background image */}
+            {/* Section avec image de fond */}
             <section id="home" className="relative w-full h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/teamgdg.png')" }}>
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                        Let Their Experiences Inspire Your Growth
+                       Welcome to GDG BLOG
                     </h1>
-                    <a href="/login" className="bg-green-500 text-white py-3 px-8 rounded-full text-lg hover:text-black transition-all">
-                        Get Started
-                    </a>
+
                 </div>
             </section>
 
@@ -52,7 +50,7 @@ const Home = () => {
             {/* Section Blogs */}
             <section id="blogs" className="w-full h-screen bg-white flex flex-col justify-center">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-green-600 text-center mb-8">Latest Blogs</h2>
+                    <h2 className="text-3xl font-bold text-[#4285F4] text-center mb-8">Latest Blogs</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {blogList.map((blog) => (
                             <div key={blog.id} className="bg-gray-100 p-6 rounded-lg shadow-lg h-80 flex flex-col justify-between">
@@ -82,7 +80,7 @@ const Home = () => {
                         ))}
                     </div>
                     <div className="text-right mt-6">
-                        <a href="/login" className="text-blue-500 text-sm hover:underline">See more</a>
+                        <a href="/blogs" className="text-blue-500 text-sm hover:underline">See more</a>
                     </div>
                 </div>
             </section>
@@ -101,11 +99,10 @@ const Home = () => {
                     </div>
                 </div>
             )}
-
             {/* Section Alumni */}
-            <section id="alumni" className="w-full h-screen bg-gray-100 flex flex-col justify-center">
+            <section  id="alumni" className="w-full h-screen bg-gray-100 flex flex-col justify-center">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-green-600 text-center mb-8">Our Alumnies</h2>
+                    <h2 className="text-3xl font-bold text-[#4285F4] text-center mb-8">Our Alumnies </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {memberList.map((member) => (
                             <div key={member.id} className="bg-white p-6 rounded-lg shadow-lg h-80 flex flex-col items-center justify-center">
@@ -116,7 +113,7 @@ const Home = () => {
                     </div>
 
                     <div className="text-right mt-6">
-                        <a href="/login" className="text-blue-500 text-sm hover:underline">See more</a>
+                        <a href="/blogs" className="text-blue-500 text-sm hover:underline">See more</a>
                     </div>
                 </div>
             </section>
@@ -124,4 +121,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Homemember;
