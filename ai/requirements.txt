@@ -1,0 +1,14 @@
+langchain
+#langchain-openai
+streamlit
+python-dotenv
+#openai
+langchain-community  # for ollama
+langserve # for apis
+fastapi
+uvicorn #since I'm gonna create my entiry swagger documentation of the api using fast api
+sse_starlette
+bs4
+pypdf
+chromadb
+#faiss-cpu
