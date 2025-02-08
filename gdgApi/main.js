@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./models/user.model.js");
+const authRoute = require("./routes/auth.route.js");
 const userRoute = require("./routes/user.route.js");
 const Blog = require("./models/blog.model.js");
 const blogRoute = require("./routes/blog.route.js");
@@ -12,6 +13,7 @@ app.use(express.urlencoded({extended: false}));
 
 
 // routes
+app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/blogs", blogRoute);
 
